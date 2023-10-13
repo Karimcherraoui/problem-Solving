@@ -24,17 +24,14 @@ console.log("-------------------------------------------------------------------
 console.log("-------------------------- The second problem solving --------------------------")
 
 
-
 // Given two strings, write a method to determine if they are one edit away from each other.
-const string1= "oucod";
-const string2= "youcode";
-
+const string1= "youcode";
+const string2= "oucod";
 function checkEdit(s1, s2) {
   let arr1 = Array.from(s1);
   let arr2 = Array.from(s2);
   let char = [];
   let charemoved = [];
-
   let l1 = arr1.length;
   let l2 = arr2.length;
   if (Math.abs(l1 - l2) >= 3) {
@@ -50,7 +47,6 @@ function checkEdit(s1, s2) {
         i++;
       }
     }
-
     while ((l2 - l1) < 0) {
       if (arr1[i] !== arr2[i]) {
         char.push(arr1[i]);
@@ -68,21 +64,27 @@ function checkEdit(s1, s2) {
 
   return [arr1.join(''), arr2.join(''), char,charemoved];
 }
-
 const [str1, str2, char,charemoved] = checkEdit(string1, string2);
-
 console.log("String 1:", str1);
 console.log("String 2:", str2);
 console.log()
 if(charemoved.length == 0){
-
     console.log("Character insert:", char);
 }else if(char.length == 0){
     console.log("Character removed:", charemoved);
 }
-
-
 console.log("--------------------------------------------------------------------------------")
 
 
 
+console.log("-------------------------- Problem solving Reverse Integer --------------------------")
+
+
+function reverseInt(n) {
+  return parseInt(n.toString().split('').reverse().join('')) * Math.sign(n)
+}
+
+console.log(reverseInt(-51));
+
+
+console.log("--------------------------------------------------------------------------------")
